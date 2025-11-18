@@ -1,9 +1,9 @@
 import Link from 'next/link';
-import Image from 'next/image';
 import { notFound } from 'next/navigation';
 import { getRecipeById, getAllRecipeIds, getMethodBySlug } from '@/lib/data/methods';
 import { Breadcrumbs } from '@/components/shared/Breadcrumbs';
 import { RecipeCard } from '@/components/shared/RecipeCard';
+import { RecipeImageGallery } from '@/components/shared/RecipeImageGallery';
 
 // Generate static params for all recipes
 export function generateStaticParams() {
@@ -41,19 +41,11 @@ export default async function RecipeDetailPage({
           ]}
         />
 
-        {/* Hero Image */}
-        {recipe.image && (
-          <div className="relative w-full h-64 md:h-96 rounded-xl overflow-hidden mb-8 shadow-lg">
-            <Image
-              src={recipe.image}
-              alt={recipe.title}
-              fill
-              className="object-cover"
-              priority
-              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 1200px"
-            />
-          </div>
-        )}
+        {/* Hero Image Gallery */}
+        <RecipeImageGallery
+          images={recipe.images || (recipe.image ? [recipe.image] : [])}
+          recipeTitle={recipe.title}
+        />
 
         {/* Header */}
         <div className="mb-8">

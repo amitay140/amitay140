@@ -16,7 +16,13 @@ export const cookingMethods: CookingMethod[] = [
         cookTime: 0,
         difficulty: 'קל',
         fishType: 'דניס',
-        image: 'https://placehold.co/800x600/0ea5e9/white.png?text=Ceviche+Sea+Bass',
+        images: [
+          'https://placehold.co/800x600/0ea5e9/white.png?text=Ceviche+Dish',
+          'https://placehold.co/600x800/06b6d4/white.png?text=Fresh+Fish',
+          'https://placehold.co/800x600/0284c7/white.png?text=Ingredients',
+          'https://placehold.co/600x800/0369a1/white.png?text=Preparation',
+          'https://placehold.co/800x600/075985/white.png?text=Final+Plate'
+        ],
         ingredients: [
           '500 גרם דניס טרי, חתוך לקוביות',
           'מיץ מ-6 לימונים',
@@ -76,7 +82,12 @@ export const cookingMethods: CookingMethod[] = [
         cookTime: 10,
         difficulty: 'קל',
         fishType: 'דניס',
-        image: 'https://placehold.co/800x600/f59e0b/white.png?text=Fried+Sea+Bass',
+        images: [
+          'https://placehold.co/800x600/f59e0b/white.png?text=Fried+Fish',
+          'https://placehold.co/600x800/d97706/white.png?text=Raw+Fillet',
+          'https://placehold.co/800x600/b45309/white.png?text=Breading+Station',
+          'https://placehold.co/600x800/92400e/white.png?text=Frying+Pan'
+        ],
         ingredients: [
           'פילה דניס',
           'קמח',
@@ -171,7 +182,13 @@ export const cookingMethods: CookingMethod[] = [
         cookTime: 20,
         difficulty: 'בינוני',
         fishType: 'דניס',
-        image: 'https://placehold.co/800x600/ef4444/white.png?text=Grilled+Sea+Bass',
+        images: [
+          'https://placehold.co/800x600/ef4444/white.png?text=Grilled+Fish',
+          'https://placehold.co/600x800/dc2626/white.png?text=Fresh+Catch',
+          'https://placehold.co/800x600/b91c1c/white.png?text=Seasoning',
+          'https://placehold.co/600x800/991b1b/white.png?text=On+The+Grill',
+          'https://placehold.co/800x600/7f1d1d/white.png?text=Plated'
+        ],
         ingredients: [
           'דניס שלם',
           'שמן זית',

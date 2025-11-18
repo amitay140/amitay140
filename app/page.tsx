@@ -1,12 +1,12 @@
 import Link from 'next/link';
 import { cookingMethods, getAllRecipes } from '@/lib/data/methods';
+import { PageLayout } from '@/components/layouts/PageLayout';
 
 export default function Home() {
   const totalMethods = cookingMethods.length;
   const totalRecipes = getAllRecipes().length;
   return (
-    <div className="min-h-screen bg-gradient-to-b from-cyan-50 to-blue-50 flex flex-col">
-      <main className="container mx-auto px-4 py-16 flex-grow">
+    <PageLayout>
         {/* Hero Section */}
         <section className="text-center mb-16">
           <h1 className="text-5xl font-bold text-blue-900 mb-4">
@@ -82,14 +82,6 @@ export default function Home() {
             כאן תמצאו מתכונים, טכניקות הכנה וטיפים לטיפול נכון בדגים מרגע הדייג ועד לצלחת.
           </p>
         </section>
-      </main>
-
-      {/* Footer */}
-      <footer className="bg-blue-900 text-white py-6">
-        <div className="container mx-auto text-center">
-          <p>🐟 דג טוב, אוכל טוב!</p>
-        </div>
-      </footer>
-    </div>
+    </PageLayout>
   );
 }

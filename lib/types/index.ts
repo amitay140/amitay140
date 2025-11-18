@@ -9,7 +9,8 @@ export interface Recipe {
   cookTime: number; // minutes
   difficulty: DifficultyLevel;
   fishType?: string; // optional for now
-  image?: string; // optional recipe image URL or path
+  image?: string; // optional recipe image URL or path (legacy - single image)
+  images?: string[]; // optional multiple recipe images (new - takes precedence over image)
   ingredients?: string[]; // optional for MVP
   instructions?: string[]; // optional for MVP
 }

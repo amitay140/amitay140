@@ -7,21 +7,34 @@ interface RecipeCardProps {
 }
 
 export function RecipeCard({ recipe }: RecipeCardProps) {
+  // Get hero image from images array or fallback to single image field
+  const imagesList = recipe.images || (recipe.image ? [recipe.image] : []);
+  const heroImage = imagesList[0];
+  const photoCount = imagesList.length;
+
   return (
     <Link
       href={`/recipes/${recipe.id}`}
       className="block bg-white rounded-lg shadow-md hover:shadow-xl transition-all hover:scale-105 overflow-hidden cursor-pointer"
     >
       {/* Recipe Image */}
-      {recipe.image && (
+      {heroImage && (
         <div className="relative w-full h-48 bg-gradient-to-br from-cyan-100 to-blue-100">
           <Image
-            src={recipe.image}
+            src={heroImage}
             alt={recipe.title}
             fill
             className="object-cover"
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
           />
+
+          {/* Photo Count Badge */}
+          {photoCount > 1 && (
+            <div className="absolute top-3 left-3 bg-black/70 text-white text-xs px-2 py-1 rounded-full flex items-center gap-1">
+              <span>📷</span>
+              <span>+{photoCount - 1}</span>
+            </div>
+          )}
         </div>
       )}
 
