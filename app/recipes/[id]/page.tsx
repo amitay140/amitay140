@@ -4,6 +4,7 @@ import { getRecipeById, getAllRecipeIds, getMethodBySlug } from '@/lib/data/meth
 import { Breadcrumbs } from '@/components/shared/Breadcrumbs';
 import { RecipeCard } from '@/components/shared/RecipeCard';
 import { RecipeImageGallery } from '@/components/shared/RecipeImageGallery';
+import { PageLayout } from '@/components/layouts/PageLayout';
 
 // Generate static params for all recipes
 export function generateStaticParams() {
@@ -30,8 +31,7 @@ export default async function RecipeDetailPage({
   const relatedRecipes = method?.recipes.filter(r => r.id !== recipe.id).slice(0, 3) || [];
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-cyan-50 to-blue-50 flex flex-col">
-      <main className="container mx-auto px-4 py-16 flex-grow">
+    <PageLayout>
         {/* Breadcrumbs */}
         <Breadcrumbs
           items={[
@@ -168,14 +168,6 @@ export default async function RecipeDetailPage({
             </div>
           </div>
         )}
-      </main>
-
-      {/* Footer */}
-      <footer className="bg-blue-900 text-white py-6">
-        <div className="container mx-auto text-center">
-          <p>🐟 דג טוב, אוכל טוב!</p>
-        </div>
-      </footer>
-    </div>
+    </PageLayout>
   );
 }
