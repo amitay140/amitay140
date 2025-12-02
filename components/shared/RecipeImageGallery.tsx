@@ -1,7 +1,6 @@
 'use client';
 
 import { useState } from 'react';
-import Image from 'next/image';
 import Lightbox from 'yet-another-react-lightbox';
 import Zoom from 'yet-another-react-lightbox/plugins/zoom';
 import 'yet-another-react-lightbox/styles.css';
@@ -40,19 +39,19 @@ export function RecipeImageGallery({ images, recipeTitle }: RecipeImageGalleryPr
     return (
       <>
         <div
-          className="relative w-full h-64 md:h-96 rounded-xl overflow-hidden mb-8 shadow-lg cursor-pointer hover:opacity-95 transition-opacity"
+          className="relative w-full h-[50vh] min-h-[400px] rounded-3xl overflow-hidden mb-12 shadow-2xl cursor-pointer group mx-auto max-w-[1920px]"
           onClick={() => handleImageClick(0)}
         >
-          <Image
+          <img
             src={images[0]}
             alt={recipeTitle}
-            fill
-            className="object-cover"
-            priority
-            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 1200px"
+            className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
           />
+          {/* Dark Gradient Overlay for better text contrast if needed later */}
+          <div className="absolute inset-0 bg-gradient-to-t from-slate-900/20 to-transparent pointer-events-none" />
+          
           {/* Zoom indicator */}
-          <div className="absolute bottom-3 right-3 bg-black/60 text-white text-xs px-3 py-1.5 rounded-full flex items-center gap-1.5">
+          <div className="absolute bottom-6 right-6 bg-white/20 backdrop-blur-md border border-white/20 text-white text-sm font-medium px-4 py-2 rounded-full flex items-center gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
             <span>🔍</span>
             <span>לחץ להגדלה</span>
           </div>
@@ -76,7 +75,7 @@ export function RecipeImageGallery({ images, recipeTitle }: RecipeImageGalleryPr
   // Multiple images - show carousel with lightbox
   return (
     <>
-      <div className="mb-8">
+      <div className="mb-12 mx-auto max-w-[1920px]">
         <Carousel
           opts={{
             align: "center",
@@ -89,19 +88,18 @@ export function RecipeImageGallery({ images, recipeTitle }: RecipeImageGalleryPr
             {images.map((imageUrl, index) => (
               <CarouselItem key={index}>
                 <div
-                  className="relative w-full h-64 md:h-96 rounded-xl overflow-hidden shadow-lg cursor-pointer hover:opacity-95 transition-opacity"
+                  className="relative w-full h-[50vh] min-h-[400px] rounded-3xl overflow-hidden shadow-2xl cursor-pointer group"
                   onClick={() => handleImageClick(index)}
                 >
-                  <Image
+                  <img
                     src={imageUrl}
                     alt={`${recipeTitle} - תמונה ${index + 1}`}
-                    fill
-                    className="object-cover"
-                    priority={index === 0} // Priority only for first image
-                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 1200px"
+                    className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
                   />
+                   <div className="absolute inset-0 bg-gradient-to-t from-slate-900/20 to-transparent pointer-events-none" />
+                  
                   {/* Zoom indicator */}
-                  <div className="absolute bottom-3 right-3 bg-black/60 text-white text-xs px-3 py-1.5 rounded-full flex items-center gap-1.5">
+                  <div className="absolute bottom-6 right-6 bg-white/20 backdrop-blur-md border border-white/20 text-white text-sm font-medium px-4 py-2 rounded-full flex items-center gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
                     <span>🔍</span>
                     <span>לחץ להגדלה</span>
                   </div>
@@ -109,14 +107,9 @@ export function RecipeImageGallery({ images, recipeTitle }: RecipeImageGalleryPr
               </CarouselItem>
             ))}
           </CarouselContent>
-          <CarouselPrevious className="right-4 left-auto" />
-          <CarouselNext className="left-4 right-auto" />
+          <CarouselPrevious className="right-8 left-auto bg-white/10 border-white/20 text-white hover:bg-white/20 hover:text-white h-12 w-12" />
+          <CarouselNext className="left-8 right-auto bg-white/10 border-white/20 text-white hover:bg-white/20 hover:text-white h-12 w-12" />
         </Carousel>
-
-        {/* Image counter */}
-        <div className="text-center mt-2 text-sm text-gray-600">
-          {images.length} תמונות • לחץ על תמונה להגדלה
-        </div>
       </div>
 
       {/* Lightbox */}

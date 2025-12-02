@@ -11,55 +11,77 @@ export const cookingMethods: CookingMethod[] = [
       {
         id: 'r1',
         title: 'סביצ\'ה דניס קלאסית',
-        description: 'דניס טרי בסגנון פרואני מסורתי עם לימון, כוסברה ובצל אדום',
+        description: 'דניס טרי בסגנון פרואני מסורתי עם לימון, כוסברה ובצל אדום. מנה מרעננת וקלה להכנה.',
         prepTime: 20,
         cookTime: 0,
         difficulty: 'קל',
         fishType: 'דניס',
-        image: '/images/recipes/ceviche-fresh-fish.jpg',
+        image: 'https://images.unsplash.com/photo-1535400255456-984241443b29?auto=format&fit=crop&w=800&q=80',
+        images: [
+          'https://images.unsplash.com/photo-1535400255456-984241443b29?auto=format&fit=crop&w=800&q=80',
+          'https://images.unsplash.com/photo-1553621042-f6e147245754?auto=format&fit=crop&w=800&q=80'
+        ],
         ingredients: [
           '500 גרם דניס טרי, חתוך לקוביות',
           'מיץ מ-6 לימונים',
           'בצל אדום אחד, פרוס דק',
-          'כוסברה טרייה',
-          'פלפל חריף (אופציונלי)',
-          'מלח ופלפל שחור'
+          'כוסברה טרייה קצוצה',
+          'פלפל חריף (לפי הטעם)',
+          'מלח ים אטלנטי',
+          'פלפל שחור גרוס'
         ],
         instructions: [
-          'חתכו את הדניס לקוביות של 1-2 ס"מ',
-          'מערבבים עם מיץ הלימון ומלח',
-          'משאירים במקרר ל-15-20 דקות',
-          'מוסיפים בצל, כוסברה ופלפל',
-          'מגישים מיד עם צ\'יפס או טורטיה'
+          'חתכו את פילה הדניס לקוביות בגודל 1-2 ס"מ.',
+          'בקערה, ערבבו את הדג עם מיץ הלימון והמלח.',
+          'הניחו במקרר למנוחה של 15-20 דקות (הדג ילבין).',
+          'הוסיפו את הבצל הפרוס, הכוסברה והפלפל החריף.',
+          'ערבבו בעדינות, תקנו תיבול ומזגו מעט שמן זית מעל.',
+          'הגישו מיד לצד נאצ\'וס או טוסטונים.'
         ]
       },
       {
         id: 'r2',
         title: 'סביצ\'ה לוקוס ים תיכונית',
-        description: 'לוקוס בסגנון ים תיכוני עם עגבניות שרי ובזיליקום',
+        description: 'לוקוס לבן טרי בשילוב טעמים ים תיכוניים: עגבניות שרי, בזיליקום ושמן זית משובח.',
         prepTime: 15,
         cookTime: 0,
         difficulty: 'קל',
         fishType: 'לוקוס',
-        image: '/images/recipes/ceviche-fresh-fish.jpg',
+        image: 'https://images.unsplash.com/photo-1553621042-f6e147245754?auto=format&fit=crop&w=800&q=80',
+        images: [
+          'https://images.unsplash.com/photo-1553621042-f6e147245754?auto=format&fit=crop&w=800&q=80',
+          'https://images.unsplash.com/photo-1626700051175-6818013e1d4f?auto=format&fit=crop&w=800&q=80'
+        ],
         ingredients: [
-          '400 גרם לוקוס טרי',
+          '400 גרם פילה לוקוס טרי, נקי מעור ועצמות',
           'מיץ מ-4 לימונים',
-          'עגבניות שרי',
-          'בזיליקום טרי',
-          'שום',
-          'שמן זית'
+          '10 עגבניות שרי חצויות',
+          'חופן עלי בזיליקום טריים',
+          '1 שן שום כתושה',
+          'שמן זית איכותי',
+          'זיתי קלמטה (אופציונלי)'
         ]
       },
       {
         id: 'r3',
-        title: 'סביצ\'ה אמנון חריפה',
-        description: 'אמנון עם פלפלים חריפים וג\'ינג\'ר בסגנון אסייתי',
+        title: 'סשימי אינטיאס עם הדרים',
+        description: 'פרוסות דקות של אינטיאס טרי ברוטב סויה הדרים (פונזו) וג\'ינג\'ר.',
         prepTime: 25,
         cookTime: 0,
-        difficulty: 'בינוני',
-        fishType: 'אמנון',
-        image: '/images/recipes/fish-preparation.jpg'
+        difficulty: 'מתקדם',
+        fishType: 'אינטיאס',
+        image: 'https://images.unsplash.com/photo-1579871494447-9811cf80d66c?auto=format&fit=crop&w=800&q=80',
+        images: [
+          'https://images.unsplash.com/photo-1579871494447-9811cf80d66c?auto=format&fit=crop&w=800&q=80'
+        ],
+        ingredients: [
+          '300 גרם פילה אינטיאס (החלק העליון)',
+          'רוטב סויה איכותי',
+          'מיץ תפוזים סחוט טרי',
+          'ג\'ינג\'ר מגורד טרי',
+          'שומשום קלוי',
+          'בצל ירוק קצוץ'
+        ]
       }
     ]
   },
@@ -72,49 +94,65 @@ export const cookingMethods: CookingMethod[] = [
     recipes: [
       {
         id: 'r4',
-        title: 'פילה דניס מטוגן בפירורי לחם',
-        description: 'פילה דניס פריך ומוזהב עם תיבול ים תיכוני',
-        prepTime: 15,
+        title: 'שניצל דג (פיש אנד צ\'יפס)',
+        description: 'רצועות דג לבן בציפוי פריך וזהוב של בירה וקמח, מוגש עם רוטב טרטר.',
+        prepTime: 20,
         cookTime: 10,
-        difficulty: 'קל',
-        fishType: 'דניס',
-        image: '/images/recipes/fried-golden-fish.jpg',
+        difficulty: 'בינוני',
+        fishType: 'קוד / דניס',
+        image: 'https://images.unsplash.com/photo-1599084993091-1cb5c0721cc6?auto=format&fit=crop&w=800&q=80',
+        images: [
+          'https://images.unsplash.com/photo-1599084993091-1cb5c0721cc6?auto=format&fit=crop&w=800&q=80',
+          'https://images.unsplash.com/photo-1619250907627-379c1253082a?auto=format&fit=crop&w=800&q=80'
+        ],
         ingredients: [
-          'פילה דניס',
-          'קמח',
-          'ביצים',
-          'פירורי לחם',
-          'שום',
-          'פטרוזיליה',
-          'שמן לטיגון'
+          '500 גרם פילה דג לבן יציב',
+          '1 כוס קמח',
+          '1 בקבוק בירה לבנה קרה',
+          'מלח ופלפל',
+          'שמן לטיגון עמוק'
         ],
         instructions: [
-          'מכינים שלוש קערות: קמח, ביצים מוקצפות, פירורי לחם מתובלים',
-          'טובלים כל פילה בקמח, ביצה ופירורי לחם',
-          'מטגנים במחבת עם שמן חם 3-4 דקות מכל צד',
-          'מסננים על נייר סופג',
-          'מגישים עם לימון וטרטר'
+          'מערבבים בקערה את הקמח והבירה עד לקבלת בלילה סמיכה ואחידה.',
+          'מחממים שמן עמוק בסיר.',
+          'מתבלים את נתחי הדג במלח ופלפל.',
+          'טובלים כל נתח בבלילה ומכניסים בזהירות לשמן החם.',
+          'מטגנים כ-4-5 דקות עד להזהבה יפה.',
+          'מוציאים לנייר סופג ומגישים חם.'
         ]
       },
       {
         id: 'r5',
-        title: 'דג שלם מטוגן',
-        description: 'דניס או לוקוס שלם מטוגן בשמן עמוק עד פריכות',
+        title: 'ברבוניות מטוגנות',
+        description: 'דגי ברבוניה קטנים שלמים, מקומחים ומטוגנים קריספי. נשנוש מושלם.',
         prepTime: 10,
         cookTime: 15,
-        difficulty: 'בינוני',
-        fishType: 'דניס / לוקוס',
-        image: '/images/recipes/fried-golden-fish.jpg'
+        difficulty: 'קל',
+        fishType: 'ברבוניה',
+        image: 'https://images.unsplash.com/photo-1599240332713-b30c34f9f396?auto=format&fit=crop&w=800&q=80',
+        images: [
+           'https://images.unsplash.com/photo-1599240332713-b30c34f9f396?auto=format&fit=crop&w=800&q=80'
+        ],
+        ingredients: [
+          '1 ק"ג ברבוניות נקיות',
+          'קמח לבן לקימוח',
+          'מלח',
+          'שמן עמוק לטיגון',
+          'לימון להגשה'
+        ]
       },
       {
         id: 'r6',
-        title: 'פילה מוסר מוקפץ',
-        description: 'פילה מוסר עם שום, חמאה ויין לבן',
+        title: 'פילה מוסר צרוב במחבת',
+        description: 'פילה מוסר עסיסי צרוב על העור עם חמאה, שום ורוזמרין.',
         prepTime: 10,
         cookTime: 8,
         difficulty: 'קל',
         fishType: 'מוסר',
-        image: '/images/recipes/fish-final-dish.jpg'
+        image: 'https://images.unsplash.com/photo-1594041680534-e8c8cdebd659?auto=format&fit=crop&w=800&q=80',
+        images: [
+          'https://images.unsplash.com/photo-1594041680534-e8c8cdebd659?auto=format&fit=crop&w=800&q=80'
+        ]
       }
     ]
   },
@@ -122,43 +160,52 @@ export const cookingMethods: CookingMethod[] = [
     id: '3',
     slug: 'baking',
     name: 'אפייה',
-    description: 'אפייה בתנור - שיטה בריאה ופשוטה שמשמרת את טעמי הדג הטבעיים.',
+    description: 'אפייה בתנור - שיטה בריאה ופשוטה שמשמרת את טעמי הדג הטבעיים ומתאימה לארוחות משפחתיות.',
     icon: '🔥',
     recipes: [
       {
         id: 'r7',
-        title: 'דניס בתנור עם לימון וזעתר',
-        description: 'דג שלם אפוי עם ירקות שורש',
-        prepTime: 15,
-        cookTime: 35,
+        title: 'דניס שלם בתנור עם ירקות שורש',
+        description: 'ארוחה שלמה בתבנית אחת: דניס עסיסי על מצע של תפוחי אדמה, גזר ובצל.',
+        prepTime: 20,
+        cookTime: 40,
         difficulty: 'קל',
         fishType: 'דניס',
-        image: '/images/recipes/baked-fish-plated.jpg',
+        image: 'https://images.unsplash.com/photo-1615141982880-131f3f4af88e?auto=format&fit=crop&w=800&q=80',
+        images: [
+          'https://images.unsplash.com/photo-1615141982880-131f3f4af88e?auto=format&fit=crop&w=800&q=80',
+          'https://images.unsplash.com/photo-1519708227418-c8fd9a3a277d?auto=format&fit=crop&w=800&q=80'
+        ],
         ingredients: [
-          'דניס שלם',
-          'לימון',
-          'זעתר',
-          'שום',
-          'ירקות שורש',
-          'שמן זית'
+          '2 דגי דניס שלמים נקיים',
+          '4 תפוחי אדמה פרוסים דק',
+          '2 גזרים פרוסים',
+          '1 בצל גדול פרוס לטבעות',
+          '5 שיני שום שלמות',
+          'שמן זית',
+          'רוזמרין וטימין',
+          'מלח ופלפל גרוס'
         ],
         instructions: [
-          'מחממים תנור ל-180 מעלות',
-          'מתבלים את הדג במלח, פלפל וזעתר',
-          'ממלאים את הדג בפרוסות לימון ושום',
-          'מניחים על מצע ירקות',
-          'אופים 30-35 דקות עד שהדג מוכן'
+          'מחממים תנור ל-200 מעלות.',
+          'מסדרים את הירקות בתבנית, מזלפים שמן זית ומתבלים.',
+          'חורצים את הדגים משני הצדדים ומכניסים עשבי תיבול ושום לבטן הדג.',
+          'מניחים את הדגים על הירקות, ומושחים גם אותם בשמן זית ותבלינים.',
+          'אופים כ-35-40 דקות עד שהדג מוכן והירקות רכים.'
         ]
       },
       {
         id: 'r8',
-        title: 'פילה לוקוס עם קרום פרמזן',
-        description: 'פילה אפוי עם ציפוי פרמזן ופטרוזיליה',
-        prepTime: 10,
-        cookTime: 20,
-        difficulty: 'קל',
+        title: 'פילה לוקוס ברוטב עגבניות וחצילים',
+        description: 'תבשיל קדרת דגים עשיר בטעמים, מושלם לערב שבת.',
+        prepTime: 15,
+        cookTime: 30,
+        difficulty: 'בינוני',
         fishType: 'לוקוס',
-        image: '/images/recipes/baked-fish-plated.jpg'
+        image: 'https://images.unsplash.com/photo-1512058564366-18510be2db19?auto=format&fit=crop&w=800&q=80',
+        images: [
+          'https://images.unsplash.com/photo-1512058564366-18510be2db19?auto=format&fit=crop&w=800&q=80'
+        ]
       }
     ]
   },
@@ -171,47 +218,56 @@ export const cookingMethods: CookingMethod[] = [
     recipes: [
       {
         id: 'r9',
-        title: 'דניס על הגריל',
-        description: 'דג שלם צלוי עם עשבי תיבול',
+        title: 'לברק שלם על הגריל',
+        description: 'לברק שלם צלוי בפשטות עם שמן זית, לימון ועשבי תיבול. הטעם של הים.',
         prepTime: 10,
-        cookTime: 20,
+        cookTime: 15,
         difficulty: 'בינוני',
-        fishType: 'דניס',
-        image: '/images/recipes/grilled-whole-fish.jpg',
+        fishType: 'לברק',
+        image: 'https://images.unsplash.com/photo-1519708227418-c8fd9a3a277d?auto=format&fit=crop&w=800&q=80',
+        images: [
+          'https://images.unsplash.com/photo-1519708227418-c8fd9a3a277d?auto=format&fit=crop&w=800&q=80'
+        ],
         ingredients: [
-          'דניס שלם',
-          'שמן זית',
-          'לימון',
-          'עשבי תיבול טריים',
-          'מלח פלפל'
+          '2 דגי לברק שלמים (כ-500 גרם כ"א)',
+          'שמן זית בנדיבות',
+          'מלח ים גס',
+          'ענפי תימין ורוזמרין',
+          'פרוסות לימון'
         ],
         instructions: [
-          'מחממים את הגריל היטב',
-          'משמנים את הדג ומתבלים',
-          'צולים 8-10 דקות מכל צד',
-          'בודקים שהבשר מתקלף בקלות',
-          'מגישים עם סלט ירקות'
+          'מחממים את הגריל לחום גבוה.',
+          'חורצים את הדגים באלכסון (3 חריצים בכל צד).',
+          'ממלאים את בטן הדג בעשבי התיבול והלימון.',
+          'מורחים את הדגים בשמן זית ומפזרים מלח גס.',
+          'צולים כ-6-7 דקות מכל צד, עד שהעור קריספי והבשר נפרד מהעצם.'
         ]
       },
       {
         id: 'r10',
-        title: 'שיפודי סלמון',
-        description: 'קוביות סלמון צלויות עם ירקות',
+        title: 'שיפודי סלמון בטריאקי',
+        description: 'קוביות סלמון עסיסיות במרינדת טריאקי וסויה, צלויות על האש.',
         prepTime: 20,
-        cookTime: 12,
+        cookTime: 8,
         difficulty: 'קל',
         fishType: 'סלמון',
-        image: '/images/recipes/grilled-whole-fish.jpg'
+        image: 'https://images.unsplash.com/photo-1532550907401-a500c9a57435?auto=format&fit=crop&w=800&q=80',
+        images: [
+          'https://images.unsplash.com/photo-1532550907401-a500c9a57435?auto=format&fit=crop&w=800&q=80'
+        ]
       },
       {
         id: 'r11',
-        title: 'סטייק טונה צלוי',
-        description: 'סטייק טונה צלוי מבחוץ, נא מבפנים',
+        title: 'סטייק טונה צרוב',
+        description: 'סטייק טונה אדומה צרוב קלות (מדיום-רייר) עם פלפל גרוס.',
         prepTime: 5,
-        cookTime: 6,
+        cookTime: 4,
         difficulty: 'מתקדם',
         fishType: 'טונה',
-        image: '/images/recipes/fish-final-dish.jpg'
+        image: 'https://images.unsplash.com/photo-1501595091296-3aa970afb3ff?auto=format&fit=crop&w=800&q=80',
+        images: [
+          'https://images.unsplash.com/photo-1501595091296-3aa970afb3ff?auto=format&fit=crop&w=800&q=80'
+        ]
       }
     ]
   }

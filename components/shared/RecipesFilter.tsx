@@ -63,22 +63,22 @@ export function RecipesFilter({ recipes }: RecipesFilterProps) {
   };
 
   return (
-    <div>
+    <div className="w-full">
       {/* Search Bar */}
-      <div className="mb-6">
+      <div className="mb-8 max-w-2xl mx-auto">
         <div className="relative">
           <input
             type="text"
             placeholder="חפש מתכון..."
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
-            className="w-full px-6 py-3 rounded-lg border-2 border-gray-200 focus:border-blue-500 focus:outline-none bg-white text-gray-900 placeholder:text-gray-400"
+            className="w-full px-6 py-4 rounded-full border border-slate-300 focus:border-slate-900 focus:ring-1 focus:ring-slate-900 focus:outline-none bg-white/80 backdrop-blur text-slate-900 placeholder:text-slate-400 transition-all shadow-sm"
             dir="rtl"
           />
           {searchQuery && (
             <button
               onClick={() => setSearchQuery('')}
-              className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600"
+              className="absolute left-6 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-600"
             >
               ✕
             </button>
@@ -87,51 +87,67 @@ export function RecipesFilter({ recipes }: RecipesFilterProps) {
       </div>
 
       {/* Filter Dropdowns */}
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
+      <div className="flex flex-wrap gap-4 mb-8 justify-center">
         {/* Difficulty Filter */}
-        <select
-          value={difficultyFilter}
-          onChange={(e) => setDifficultyFilter(e.target.value)}
-          className="px-4 py-2 rounded-lg border-2 border-gray-200 focus:border-blue-500 focus:outline-none cursor-pointer bg-white text-gray-900"
-          dir="rtl"
-        >
-          <option value="all">כל הרמות</option>
-          <option value="קל">קל</option>
-          <option value="בינוני">בינוני</option>
-          <option value="מתקדם">מתקדם</option>
-        </select>
+        <div className="relative">
+            <select
+              value={difficultyFilter}
+              onChange={(e) => setDifficultyFilter(e.target.value)}
+              className="appearance-none px-6 py-3 pr-10 rounded-full border border-slate-300 focus:border-slate-900 focus:outline-none cursor-pointer bg-white/80 backdrop-blur text-slate-900 font-medium min-w-[140px]"
+              dir="rtl"
+            >
+              <option value="all">כל הרמות</option>
+              <option value="קל">קל</option>
+              <option value="בינוני">בינוני</option>
+              <option value="מתקדם">מתקדם</option>
+            </select>
+             <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center px-4 text-slate-500">
+                <svg className="h-4 w-4 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
+            </div>
+        </div>
+
 
         {/* Fish Type Filter */}
-        <select
-          value={fishTypeFilter}
-          onChange={(e) => setFishTypeFilter(e.target.value)}
-          className="px-4 py-2 rounded-lg border-2 border-gray-200 focus:border-blue-500 focus:outline-none cursor-pointer bg-white text-gray-900"
-          dir="rtl"
-        >
-          <option value="all">כל סוגי הדגים</option>
-          {fishTypes.map(type => (
-            <option key={type} value={type}>{type}</option>
-          ))}
-        </select>
+        <div className="relative">
+            <select
+              value={fishTypeFilter}
+              onChange={(e) => setFishTypeFilter(e.target.value)}
+              className="appearance-none px-6 py-3 pr-10 rounded-full border border-slate-300 focus:border-slate-900 focus:outline-none cursor-pointer bg-white/80 backdrop-blur text-slate-900 font-medium min-w-[160px]"
+              dir="rtl"
+            >
+              <option value="all">כל סוגי הדגים</option>
+              {fishTypes.map(type => (
+                <option key={type} value={type}>{type}</option>
+              ))}
+            </select>
+            <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center px-4 text-slate-500">
+                <svg className="h-4 w-4 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
+            </div>
+        </div>
 
         {/* Time Filter */}
-        <select
-          value={timeFilter}
-          onChange={(e) => setTimeFilter(e.target.value)}
-          className="px-4 py-2 rounded-lg border-2 border-gray-200 focus:border-blue-500 focus:outline-none cursor-pointer bg-white text-gray-900"
-          dir="rtl"
-        >
-          <option value="all">כל זמני ההכנה</option>
-          <option value="quick">מהיר (עד 20 דק׳)</option>
-          <option value="medium">בינוני (20-40 דק׳)</option>
-          <option value="long">ארוך (מעל 40 דק׳)</option>
-        </select>
+        <div className="relative">
+            <select
+              value={timeFilter}
+              onChange={(e) => setTimeFilter(e.target.value)}
+              className="appearance-none px-6 py-3 pr-10 rounded-full border border-slate-300 focus:border-slate-900 focus:outline-none cursor-pointer bg-white/80 backdrop-blur text-slate-900 font-medium min-w-[180px]"
+              dir="rtl"
+            >
+              <option value="all">כל זמני ההכנה</option>
+              <option value="quick">מהיר (עד 20 דק׳)</option>
+              <option value="medium">בינוני (20-40 דק׳)</option>
+              <option value="long">ארוך (מעל 40 דק׳)</option>
+            </select>
+            <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center px-4 text-slate-500">
+                <svg className="h-4 w-4 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
+            </div>
+        </div>
 
         {/* Reset Button */}
         {hasActiveFilters && (
           <button
             onClick={resetFilters}
-            className="px-4 py-2 rounded-lg border-2 border-gray-200 bg-white text-gray-900 hover:bg-gray-50 hover:border-blue-500 transition-colors font-semibold"
+            className="px-6 py-3 rounded-full border border-slate-300 bg-white text-slate-600 hover:bg-slate-100 hover:text-slate-900 transition-colors font-semibold"
           >
             איפוס
           </button>
@@ -140,26 +156,26 @@ export function RecipesFilter({ recipes }: RecipesFilterProps) {
 
       {/* Results Count */}
       {hasActiveFilters && (
-        <div className="text-center mb-6 text-gray-600">
+        <div className="text-center mb-8 text-slate-500 font-medium">
           נמצאו {filteredRecipes.length} מתכונים
         </div>
       )}
 
       {/* Recipes Grid */}
       {filteredRecipes.length > 0 ? (
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {filteredRecipes.map((recipe) => (
             <RecipeCard key={recipe.id} recipe={recipe} />
           ))}
         </div>
       ) : (
-        <div className="text-center py-12 bg-white rounded-lg shadow-md">
-          <p className="text-xl text-gray-500 mb-2">לא נמצאו מתכונים</p>
-          <p className="text-gray-400 mb-4">נסה לשנות את הסינון</p>
+        <div className="text-center py-20">
+          <p className="text-2xl text-slate-400 mb-4 font-light">לא נמצאו מתכונים</p>
+          <p className="text-slate-500 mb-6">נסה לשנות את הטיבול</p>
           {hasActiveFilters && (
             <button
               onClick={resetFilters}
-              className="text-blue-600 hover:text-blue-800 font-semibold"
+              className="text-slate-900 border-b border-slate-900 pb-1 hover:border-slate-600 transition-colors font-medium"
             >
               איפוס סינון
             </button>

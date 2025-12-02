@@ -10,8 +10,11 @@ export function Header() {
   const pathname = usePathname();
 
   const navLinks = [
-    { href: '/', label: 'דף הבית', icon: '🏠' },
-    { href: '/methods', label: 'שיטות הכנה', icon: '🍳' },
+    { href: '/', label: 'דף הבית' },
+    { href: '/recipes', label: 'מתכונים' },
+    { href: '/videos', label: 'סרטונים' },
+    { href: '/tutorials', label: 'מדריכים' },
+    { href: '/about', label: 'אודות' },
   ];
 
   const isActive = (href: string) => {
@@ -20,59 +23,60 @@ export function Header() {
   };
 
   return (
-    <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-200 shadow-sm">
-      <nav className="container mx-auto px-4">
-        <div className="flex items-center justify-between h-16">
-          {/* Desktop Navigation - First in DOM for RTL (appears on right) */}
-          <div className="hidden md:flex items-center gap-1">
-            {navLinks.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className={cn(
-                  'flex items-center gap-2 px-4 py-2 rounded-lg font-semibold transition-all',
-                  isActive(link.href)
-                    ? 'bg-blue-50 text-blue-700'
-                    : 'text-gray-700 hover:bg-gray-100 hover:text-gray-900'
-                )}
-              >
-                <span>{link.icon}</span>
-                <span>{link.label}</span>
-              </Link>
-            ))}
+    <header className="sticky top-0 z-50 bg-slate-900 border-b-2 border-slate-800 shadow-xl">
+      <nav className="w-full max-w-[1920px] mx-auto px-6 md:px-12">
+        <div className="flex items-center justify-between h-24">
+          {/* Right side group (Website Name + Desktop Nav) */}
+          <div className="flex items-center gap-12">
+            {/* Logo/Brand - Rightmost element in RTL */}
+            <Link
+              href="/"
+              className="flex items-center gap-3 text-4xl font-bold text-white tracking-tight hover:opacity-90 transition-opacity"
+            >
+              <span className="hidden sm:inline">מתכונים מדגי הים</span>
+              <span className="sm:hidden">מתכונים</span>
+            </Link>
+            
+            {/* Desktop Navigation - Next to the Logo */}
+            <div className="hidden md:flex items-center gap-12">
+              {navLinks.map((link) => (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className={cn(
+                    'text-xl font-medium transition-all tracking-wide hover:-translate-y-0.5',
+                    isActive(link.href)
+                      ? 'text-white font-bold'
+                      : 'text-slate-300 hover:text-white'
+                  )}
+                >
+                  {link.label}
+                </Link>
+              ))}
+            </div>
           </div>
 
-          {/* Mobile Menu Button - First on mobile for RTL (appears on right) */}
+          {/* Left side (Mobile Menu Button) */}
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="md:hidden p-2 rounded-lg hover:bg-gray-100 transition-colors"
+            className="md:hidden p-2 rounded-lg text-slate-300 hover:bg-slate-800 transition-colors"
             aria-label="תפריט"
           >
             {mobileMenuOpen ? (
-              <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
               </svg>
             ) : (
-              <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
               </svg>
             )}
           </button>
-
-          {/* Logo/Brand - Last in DOM for RTL (appears on left) */}
-          <Link
-            href="/"
-            className="flex items-center gap-2 text-xl font-bold text-gray-900 hover:text-blue-600 transition-colors"
-          >
-            <span className="text-2xl">🐟</span>
-            <span className="hidden sm:inline">מתכונים מדגי הים</span>
-            <span className="sm:hidden">מתכונים</span>
-          </Link>
         </div>
 
         {/* Mobile Navigation */}
         {mobileMenuOpen && (
-          <div className="md:hidden py-4 border-t border-gray-200">
+          <div className="md:hidden py-4 border-t border-slate-800 bg-slate-900">
             <div className="flex flex-col gap-2">
               {navLinks.map((link) => (
                 <Link
@@ -80,14 +84,13 @@ export function Header() {
                   href={link.href}
                   onClick={() => setMobileMenuOpen(false)}
                   className={cn(
-                    'flex items-center gap-3 px-4 py-3 rounded-lg font-semibold transition-all',
+                    'px-4 py-4 rounded-lg text-2xl font-medium transition-colors',
                     isActive(link.href)
-                      ? 'bg-blue-50 text-blue-700'
-                      : 'text-gray-700 hover:bg-gray-100'
+                      ? 'bg-slate-800 text-white'
+                      : 'text-slate-300 hover:bg-slate-800 hover:text-white'
                   )}
                 >
-                  <span className="text-xl">{link.icon}</span>
-                  <span>{link.label}</span>
+                  {link.label}
                 </Link>
               ))}
             </div>

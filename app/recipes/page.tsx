@@ -1,10 +1,13 @@
-import { cookingMethods } from '@/lib/data/methods';
-import { MethodsFilter } from '@/components/shared/MethodsFilter';
+import React from 'react';
+import { getAllRecipes } from '@/lib/data/methods';
+import { RecipesFilter } from '@/components/shared/RecipesFilter';
 import { PageLayout } from '@/components/layouts/PageLayout';
 
-export default function MethodsPage() {
-  // Generic cooking background
-  const heroImage = 'https://images.unsplash.com/photo-1556910103-1c02745a30bf?auto=format&fit=crop&w=1920&q=80';
+export default function RecipesPage() {
+  const allRecipes = getAllRecipes();
+
+  // Fallback image for the main recipes page
+  const heroImage = 'https://images.unsplash.com/photo-1559339352-11d035aa65de?auto=format&fit=crop&w=1920&q=80';
 
   return (
     <PageLayout>
@@ -14,7 +17,7 @@ export default function MethodsPage() {
         <div className="absolute inset-0">
           <img
             src={heroImage}
-            alt="שיטות הכנה"
+            alt="כל המתכונים"
             className="w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/50 to-transparent" />
@@ -23,17 +26,17 @@ export default function MethodsPage() {
         {/* Content */}
         <div className="absolute inset-0 flex flex-col items-center justify-center text-center p-6">
           <h1 className="text-5xl md:text-6xl font-bold text-white mb-4 tracking-tight shadow-sm">
-            שיטות הכנה
+            כל המתכונים
           </h1>
           <p className="text-xl text-slate-100 max-w-2xl mx-auto font-light leading-relaxed shadow-sm">
-            בחרו את שיטת ההכנה המועדפת עליכם וגלו מתכונים מיוחדים
+            חפשו, סננו ובשלו את הדגים הטובים ביותר מהים התיכון
           </p>
         </div>
       </div>
 
       {/* Filter & List Section */}
       <div className="container mx-auto px-4">
-        <MethodsFilter methods={cookingMethods} />
+        <RecipesFilter recipes={allRecipes} />
       </div>
     </PageLayout>
   );

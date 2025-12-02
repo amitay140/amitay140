@@ -1,8 +1,8 @@
 'use client';
 
 import { useState } from 'react';
-import Link from 'next/link';
 import { CookingMethod } from '@/lib/types';
+import { EditorialCard } from './EditorialCard';
 
 interface MethodsFilterProps {
   methods: CookingMethod[];
@@ -21,22 +21,22 @@ export function MethodsFilter({ methods }: MethodsFilterProps) {
   });
 
   return (
-    <div>
+    <div className="w-full">
       {/* Search Bar */}
-      <div className="mb-8 max-w-2xl mx-auto">
+      <div className="mb-12 max-w-2xl mx-auto">
         <div className="relative">
           <input
             type="text"
             placeholder="חפש שיטת הכנה..."
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
-            className="w-full px-6 py-4 rounded-lg border-2 border-gray-200 focus:border-blue-500 focus:outline-none text-lg bg-white text-gray-900 placeholder:text-gray-400"
+            className="w-full px-6 py-4 rounded-full border border-slate-300 focus:border-slate-900 focus:ring-1 focus:ring-slate-900 focus:outline-none bg-white/80 backdrop-blur text-slate-900 placeholder:text-slate-400 transition-all shadow-sm"
             dir="rtl"
           />
           {searchQuery && (
             <button
               onClick={() => setSearchQuery('')}
-              className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600"
+              className="absolute left-6 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-600"
             >
               ✕
             </button>
@@ -46,46 +46,34 @@ export function MethodsFilter({ methods }: MethodsFilterProps) {
 
       {/* Results Count */}
       {searchQuery && (
-        <div className="text-center mb-6 text-gray-600">
+        <div className="text-center mb-8 text-slate-500 font-medium">
           נמצאו {filteredMethods.length} שיטות
         </div>
       )}
 
       {/* Methods Grid */}
       {filteredMethods.length > 0 ? (
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
-          {filteredMethods.map((method) => (
-            <Link
-              key={method.id}
-              href={`/methods/${method.slug}`}
-              className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow p-8 text-center group"
-            >
-              {/* Icon */}
-              <div className="text-6xl mb-4 group-hover:scale-110 transition-transform">
-                {method.icon}
-              </div>
-
-              {/* Method Name */}
-              <h2 className="text-2xl font-bold text-gray-800 mb-3">
-                {method.name}
-              </h2>
-
-              {/* Description */}
-              <p className="text-gray-600 leading-relaxed mb-4">
-                {method.description}
-              </p>
-
-              {/* Recipe Count */}
-              <div className="text-sm text-blue-600 font-semibold">
-                {method.recipes.length} מתכונים ←
-              </div>
-            </Link>
-          ))}
+        <div className="grid md:grid-cols-2 gap-8">
+          {filteredMethods.map((method) => {
+            // Use the first recipe's image as the method card background, or a fallback
+            const methodImage = method.recipes[0]?.images?.[0] || method.recipes[0]?.image || 'https://images.unsplash.com/photo-1519708227418-c8fd9a3a277d?auto=format&fit=crop&w=800&q=80';
+            
+            return (
+              <EditorialCard
+                key={method.id}
+                title={method.name}
+                subtitle={method.description}
+                image={methodImage}
+                href={`/methods/${method.slug}`}
+                meta={`${method.recipes.length} מתכונים`}
+              />
+            );
+          })}
         </div>
       ) : (
-        <div className="text-center py-12">
-          <p className="text-xl text-gray-500 mb-2">לא נמצאו תוצאות</p>
-          <p className="text-gray-400">נסה לחפש במילים אחרות</p>
+        <div className="text-center py-20">
+          <p className="text-2xl text-slate-400 mb-4 font-light">לא נמצאו תוצאות</p>
+          <p className="text-slate-500">נסה לחפש במילים אחרות</p>
         </div>
       )}
     </div>

@@ -1,86 +1,110 @@
 import Link from 'next/link';
-import { cookingMethods, getAllRecipes } from '@/lib/data/methods';
 import { PageLayout } from '@/components/layouts/PageLayout';
+import { EditorialCard } from '@/components/shared/EditorialCard';
 
 export default function Home() {
-  const totalMethods = cookingMethods.length;
-  const totalRecipes = getAllRecipes().length;
   return (
     <PageLayout>
-        {/* Hero Section */}
-        <section className="text-center mb-16">
-          <h1 className="text-5xl font-bold text-blue-900 mb-4">
-            🐟 מתכוני דגים
-          </h1>
-          <p className="text-xl text-gray-700 mb-8 max-w-2xl mx-auto">
-            ברוכים הבאים לאוסף מתכונים לדגים שנתפסו בצלילה חופשית
-          </p>
-          <p className="text-lg text-gray-600 mb-8">
-            שתפו, למדו והכינו ארוחות מדהימות מהדגים שלכם
-          </p>
+        {/* Immersive Hero Section */}
+        <div className="relative w-full h-[60vh] min-h-[500px] rounded-3xl overflow-hidden mb-20 shadow-2xl mx-auto max-w-[1920px] group">
+          {/* Background Image */}
+          <div className="absolute inset-0">
+            <img
+              src="https://images.unsplash.com/photo-1580476262716-6b369a49a3dc?auto=format&fit=crop&w=1920&q=80"
+              alt="Ocean Hero"
+              className="w-full h-full object-cover transition-transform duration-[2000ms] group-hover:scale-105"
+            />
+            <div className="absolute inset-0 bg-gradient-to-b from-slate-900/60 via-slate-900/40 to-slate-900/80" />
+          </div>
 
-          {/* Quick Stats */}
-          <div className="flex justify-center gap-8 mt-8">
-            <div className="bg-white/80 backdrop-blur-sm px-6 py-4 rounded-full shadow-md">
-              <span className="text-3xl font-bold text-blue-600">{totalRecipes}</span>
-              <span className="text-gray-700 mr-2">מתכונים</span>
+          {/* Hero Content */}
+          <div className="absolute inset-0 flex flex-col items-center justify-center text-center p-6">
+            <h1 className="text-5xl md:text-7xl font-extrabold text-white mb-6 tracking-tight drop-shadow-lg">
+              מהעומק לצלחת
+            </h1>
+            <p className="text-xl md:text-3xl text-slate-100 mb-10 max-w-3xl mx-auto font-light leading-relaxed drop-shadow-md">
+              המדריך השלם לטיפול ובישול דגי ים תיכון
+              <br className="hidden md:block" />
+              מבית היוצר של קהילת הצוללים
+            </p>
+
+            <div className="flex gap-4">
+              <Link
+                href="/recipes"
+                className="bg-white text-slate-900 px-10 py-4 rounded-full text-lg font-bold hover:bg-slate-100 transition-all hover:scale-105 shadow-xl"
+              >
+                לכל המתכונים
+              </Link>
+              <Link
+                href="/methods"
+                className="bg-slate-900/50 backdrop-blur-md text-white border border-white/30 px-10 py-4 rounded-full text-lg font-medium hover:bg-slate-900/70 transition-all hover:scale-105 shadow-xl"
+              >
+                שיטות הכנה
+              </Link>
             </div>
-            <div className="bg-white/80 backdrop-blur-sm px-6 py-4 rounded-full shadow-md">
-              <span className="text-3xl font-bold text-blue-600">{totalMethods}</span>
-              <span className="text-gray-700 mr-2">שיטות הכנה</span>
-            </div>
+          </div>
+        </div>
+
+        {/* Featured Methods Section */}
+        <section className="max-w-7xl mx-auto px-4 mb-24">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl font-bold text-slate-900 mb-4 tracking-tight">
+              שיטות הכנה נבחרות
+            </h2>
+            <p className="text-xl text-slate-600 font-light">
+              דרכים קלאסיות ומודרניות להוציא את המיטב מהדג
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            <EditorialCard
+              title="סביצ'ה"
+              subtitle="הכנה קרה ורעננה"
+              image="https://images.unsplash.com/photo-1535400255456-984241443b29?auto=format&fit=crop&w=800&q=80"
+              href="/methods/ceviche"
+              meta="קלאסי"
+            />
+            <EditorialCard
+              title="טיגון"
+              subtitle="פריך ומוזהב"
+              image="https://images.unsplash.com/photo-1599084993091-1cb5c0721cc6?auto=format&fit=crop&w=800&q=80"
+              href="/methods/frying"
+              meta="אהוב הקהל"
+            />
+            <EditorialCard
+              title="גריל"
+              subtitle="צלייה על פחמים"
+              image="https://images.unsplash.com/photo-1519708227418-c8fd9a3a277d?auto=format&fit=crop&w=800&q=80"
+              href="/methods/grilling"
+              meta="הכי ישראלי"
+            />
           </div>
         </section>
 
-        {/* Call to Action */}
-        <section className="text-center">
-          <Link
-            href="/methods"
-            className="inline-block bg-blue-600 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-blue-700 transition-colors"
-          >
-            צפו בשיטות הכנה ←
-          </Link>
-        </section>
-
-        {/* Quick Info Cards */}
-        <section className="grid md:grid-cols-3 gap-6 mt-16 max-w-4xl mx-auto">
-          <Link
-            href="/methods/ceviche"
-            className="bg-white p-6 rounded-lg shadow-md hover:shadow-xl text-center transition-all hover:scale-105 cursor-pointer"
-          >
-            <div className="text-4xl mb-3">🍋</div>
-            <h3 className="text-lg font-semibold mb-2 text-gray-900">סביצ&apos;ה</h3>
-            <p className="text-gray-600 text-sm">הכנה קרה בלימון</p>
-          </Link>
-
-          <Link
-            href="/methods/frying"
-            className="bg-white p-6 rounded-lg shadow-md hover:shadow-xl text-center transition-all hover:scale-105 cursor-pointer"
-          >
-            <div className="text-4xl mb-3">🍳</div>
-            <h3 className="text-lg font-semibold mb-2 text-gray-900">טיגון</h3>
-            <p className="text-gray-600 text-sm">פריך ומוזהב</p>
-          </Link>
-
-          <Link
-            href="/methods/grilling"
-            className="bg-white p-6 rounded-lg shadow-md hover:shadow-xl text-center transition-all hover:scale-105 cursor-pointer"
-          >
-            <div className="text-4xl mb-3">🔥</div>
-            <h3 className="text-lg font-semibold mb-2 text-gray-900">גריל</h3>
-            <p className="text-gray-600 text-sm">צלייה על האש</p>
-          </Link>
-        </section>
-
-        {/* About Section */}
-        <section className="mt-16 text-center max-w-2xl mx-auto">
-          <h2 className="text-2xl font-bold text-gray-800 mb-4">
-            על הפרויקט
-          </h2>
-          <p className="text-gray-600 leading-relaxed">
-            אתר זה נועד לשמר ולשתף את הידע הקולינרי של קהילת הדייגים החופשיים בישראל.
-            כאן תמצאו מתכונים, טכניקות הכנה וטיפים לטיפול נכון בדגים מרגע הדייג ועד לצלחת.
-          </p>
+        {/* Community/About Teaser */}
+        <section className="bg-slate-900 rounded-3xl overflow-hidden relative max-w-[1920px] mx-auto shadow-2xl">
+           <div className="absolute inset-0 opacity-20">
+              <img
+                src="https://images.unsplash.com/photo-1682687220742-aba13b6e50ba?auto=format&fit=crop&w=1920&q=80"
+                alt="Underwater"
+                className="w-full h-full object-cover"
+              />
+           </div>
+           <div className="relative p-12 md:p-20 text-center max-w-4xl mx-auto">
+              <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
+                קהילה של ים ואוכל
+              </h2>
+              <p className="text-slate-300 text-xl leading-relaxed mb-10 font-light">
+                אנחנו לא רק דייגים. אנחנו חוקרים, בשלנים ושומרי טבע.
+                הצטרפו אלינו למסע של גילוי טעמים חדשים ושימור המסורת הימית.
+              </p>
+              <Link
+                href="/about"
+                className="inline-block border border-white/20 text-white px-8 py-3 rounded-full hover:bg-white hover:text-slate-900 transition-all font-medium"
+              >
+                קראו עוד עלינו
+              </Link>
+           </div>
         </section>
     </PageLayout>
   );
