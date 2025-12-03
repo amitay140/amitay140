@@ -6,7 +6,7 @@ export default function Home() {
   return (
     <PageLayout>
         {/* Immersive Hero Section */}
-        <div className="relative w-full h-[60vh] min-h-[500px] rounded-3xl overflow-hidden mb-20 shadow-2xl mx-auto max-w-[1920px] group">
+        <div className="relative w-full h-[50vh] min-h-[400px] rounded-3xl overflow-hidden mb-20 shadow-2xl mx-auto max-w-[1920px] group">
           {/* Background Image */}
           <div className="absolute inset-0">
             <img

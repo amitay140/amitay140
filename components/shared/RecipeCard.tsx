@@ -1,7 +1,4 @@
 import Link from 'next/link';
-// Removed next/image import
-import { Recipe } from '@/lib/types';
-import { cn } from '@/lib/utils'; // Assuming cn is used
 
 interface RecipeCardProps {
   recipe: Recipe;

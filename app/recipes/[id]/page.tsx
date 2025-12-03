@@ -6,7 +6,7 @@ import { RecipeCard } from '@/components/shared/RecipeCard';
 import { RecipeImageGallery } from '@/components/shared/RecipeImageGallery';
 import { IngredientsList } from '@/components/shared/IngredientsList';
 import { PageLayout } from '@/components/layouts/PageLayout';
-import { Clock, Flame, Fish, Gauge, ChefHat, ScrollText, Utensils } from 'lucide-react';
+import { Clock, Flame, Fish, Gauge, ChefHat, Utensils } from 'lucide-react';
 
 // Generate static params for all recipes
 export function generateStaticParams() {
@@ -43,38 +43,25 @@ export default async function RecipeDetailPage({
           ]}
         />
 
-        {/* Hero Image Gallery */}
+        {/* Hero Image Gallery with integrated Title, Description and Method Badge */}
         <RecipeImageGallery
           images={recipe.images || (recipe.image ? [recipe.image] : [])}
           recipeTitle={recipe.title}
-        />
-
-        {/* Header */}
-        <div className="mb-8 mt-8">
-
-          {/* Recipe Header */}
-          <div className="bg-white rounded-2xl shadow-sm border border-slate-200 p-8">
-            {/* Method Badge */}
+          description={recipe.description}
+        >
+            {/* Integrated Method Badge */}
             <Link
               href={`/methods/${recipe.methodSlug}`}
-              className="inline-flex items-center gap-2 bg-slate-100 text-slate-700 px-4 py-2 rounded-full text-sm font-semibold mb-6 hover:bg-slate-200 transition-colors"
+              className="inline-flex items-center gap-2 bg-white/20 backdrop-blur-md border border-white/30 text-white px-6 py-2 rounded-full text-sm font-bold hover:bg-white/30 transition-colors pointer-events-auto"
             >
               <Utensils className="w-4 h-4" />
               <span>{recipe.methodName}</span>
             </Link>
+        </RecipeImageGallery>
 
-            {/* Title */}
-            <h1 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6 leading-tight">
-              {recipe.title}
-            </h1>
-
-            {/* Description */}
-            <p className="text-xl text-slate-600 mb-8 leading-relaxed font-light">
-              {recipe.description}
-            </p>
-
-            {/* Meta Info Grid */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 pt-8 border-t border-slate-100">
+        {/* Meta Info Bar (New Position) */}
+        <div className="mb-16 container mx-auto px-4">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 py-8 border-b border-slate-200">
               {recipe.fishType && (
                 <div className="flex flex-col items-center text-center group">
                   <div className="p-3 bg-blue-50 rounded-full mb-3 group-hover:bg-blue-100 transition-colors">
@@ -109,7 +96,6 @@ export default async function RecipeDetailPage({
                 <div className="font-bold text-slate-900 text-lg">{recipe.difficulty}</div>
               </div>
             </div>
-          </div>
         </div>
 
         {/* Recipe Content */}

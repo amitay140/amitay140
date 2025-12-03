@@ -1,6 +1,5 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import { cn } from '@/lib/utils';
 
 interface EditorialCardProps {
   title: string;
