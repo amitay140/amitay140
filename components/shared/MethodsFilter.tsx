@@ -55,8 +55,8 @@ export function MethodsFilter({ methods }: MethodsFilterProps) {
       {filteredMethods.length > 0 ? (
         <div className="grid md:grid-cols-2 gap-8">
           {filteredMethods.map((method) => {
-            // Use the first recipe's image as the method card background, or a fallback
-            const methodImage = method.recipes[0]?.images?.[0] || method.recipes[0]?.image || 'https://images.unsplash.com/photo-1519708227418-c8fd9a3a277d?auto=format&fit=crop&w=800&q=80';
+            // Prioritize the method-specific hero image, then fall back to recipe images or a default
+            const methodImage = method.image || method.recipes[0]?.images?.[0] || method.recipes[0]?.image || '/images/methods/chef-preparing-fish.png';
             
             return (
               <EditorialCard

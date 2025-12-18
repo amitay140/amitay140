@@ -10,7 +10,7 @@ export default function Home() {
           {/* Background Image */}
           <div className="absolute inset-0">
             <img
-              src="https://images.unsplash.com/photo-1580476262716-6b369a49a3dc?auto=format&fit=crop&w=1920&q=80"
+              src="/images/main-hero.png"
               alt="Ocean Hero"
               className="w-full h-full object-cover transition-transform duration-[2000ms] group-hover:scale-105"
             />
@@ -23,9 +23,9 @@ export default function Home() {
               מהעומק לצלחת
             </h1>
             <p className="text-xl md:text-3xl text-slate-100 mb-10 max-w-3xl mx-auto font-light leading-relaxed drop-shadow-md">
-              המדריך השלם לטיפול ובישול דגי ים תיכון
+              מתכוני דגים טריים וטכניקות בישול מקצועיות
               <br className="hidden md:block" />
-              מבית היוצר של קהילת הצוללים
+              השילוב המושלם בין אהבת הים למטבח
             </p>
 
             <div className="flex gap-4">
@@ -60,21 +60,21 @@ export default function Home() {
             <EditorialCard
               title="סביצ'ה"
               subtitle="הכנה קרה ורעננה"
-              image="https://images.unsplash.com/photo-1535400255456-984241443b29?auto=format&fit=crop&w=800&q=80"
+              image="/images/methods/ceviche-method.png"
               href="/methods/ceviche"
               meta="קלאסי"
             />
             <EditorialCard
               title="טיגון"
               subtitle="פריך ומוזהב"
-              image="https://images.unsplash.com/photo-1599084993091-1cb5c0721cc6?auto=format&fit=crop&w=800&q=80"
+              image="/images/methods/frying-method.png"
               href="/methods/frying"
               meta="אהוב הקהל"
             />
             <EditorialCard
               title="גריל"
               subtitle="צלייה על פחמים"
-              image="https://images.unsplash.com/photo-1519708227418-c8fd9a3a277d?auto=format&fit=crop&w=800&q=80"
+              image="/images/methods/grilling-method.png"
               href="/methods/grilling"
               meta="הכי ישראלי"
             />

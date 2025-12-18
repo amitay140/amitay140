@@ -9,6 +9,7 @@ export const cookingMethods: CookingMethod[] = [
     name: 'סביצ\'ה',
     description: 'שיטת הכנה קרה בה הדג "מתבשל" במיץ לימון או ליים חמוץ. מתאים במיוחד לדגים טריים ואיכותיים.',
     icon: '🍋',
+    image: '/images/methods/ceviche-method.png',
     recipes: [
       {
         id: 'r1',
@@ -93,6 +94,7 @@ export const cookingMethods: CookingMethod[] = [
     name: 'טיגון',
     description: 'טיגון במחבת או בשמן עמוק. יוצר קרום פריך וטעים תוך שמירה על עסיסיות הדג.',
     icon: '🍳',
+    image: '/images/methods/frying-method.png',
     recipes: [
       {
         id: 'r4',
@@ -164,6 +166,7 @@ export const cookingMethods: CookingMethod[] = [
     name: 'אפייה',
     description: 'אפייה בתנור - שיטה בריאה ופשוטה שמשמרת את טעמי הדג הטבעיים ומתאימה לארוחות משפחתיות.',
     icon: '🔥',
+    image: '/images/methods/baking-method.png',
     recipes: [
       {
         id: 'r7',
@@ -217,6 +220,7 @@ export const cookingMethods: CookingMethod[] = [
     name: 'גריל',
     description: 'צלייה על גריל או פחמים. מעניקה טעם מעושן מיוחד וקרום פריך.',
     icon: '🔥',
+    image: '/images/methods/grilling-method.png',
     recipes: [
       {
         id: 'r9',

@@ -21,6 +21,7 @@ export interface CookingMethod {
   slug: string; // for URL routing (e.g., "ceviche")
   name: string; // Hebrew display name
   description: string;
+  image?: string; // Hero image for the method page
   icon?: string; // emoji or icon character
   recipes: Recipe[];
 }

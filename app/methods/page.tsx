@@ -4,7 +4,7 @@ import { PageLayout } from '@/components/layouts/PageLayout';
 
 export default function MethodsPage() {
   // Generic cooking background
-  const heroImage = 'https://images.unsplash.com/photo-1556910103-1c02745a30bf?auto=format&fit=crop&w=1920&q=80';
+  const heroImage = '/images/methods/chef-preparing-fish.png';
 
   return (
     <PageLayout>

@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { Recipe } from '@/lib/types';
 
 interface RecipeCardProps {
   recipe: Recipe;

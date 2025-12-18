@@ -25,7 +25,7 @@ export default async function MethodDetailPage({
 
   // Use the local high-quality hero image for the method page
   // We prioritize the specific local image for the hero section
-  const heroImage = '/images/methods/chef-preparing-fish.png';
+  const heroImage = method.image || '/images/methods/chef-preparing-fish.png';
 
   return (
     <PageLayout>
