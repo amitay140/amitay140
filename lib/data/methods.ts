@@ -1,5 +1,7 @@
 import { CookingMethod } from '../types';
 
+const GENERIC_RECIPE_PLACEHOLDER = 'https://placehold.co/800x600/png';
+
 export const cookingMethods: CookingMethod[] = [
   {
     id: '1',
@@ -16,10 +18,10 @@ export const cookingMethods: CookingMethod[] = [
         cookTime: 0,
         difficulty: 'קל',
         fishType: 'דניס',
-        image: 'https://images.unsplash.com/photo-1535400255456-984241443b29?auto=format&fit=crop&w=800&q=80',
+        image: GENERIC_RECIPE_PLACEHOLDER,
         images: [
-          'https://images.unsplash.com/photo-1535400255456-984241443b29?auto=format&fit=crop&w=800&q=80',
-          'https://images.unsplash.com/photo-1553621042-f6e147245754?auto=format&fit=crop&w=800&q=80'
+          GENERIC_RECIPE_PLACEHOLDER,
+          GENERIC_RECIPE_PLACEHOLDER
         ],
         ingredients: [
           '500 גרם דניס טרי, חתוך לקוביות',
@@ -47,10 +49,10 @@ export const cookingMethods: CookingMethod[] = [
         cookTime: 0,
         difficulty: 'קל',
         fishType: 'לוקוס',
-        image: 'https://images.unsplash.com/photo-1553621042-f6e147245754?auto=format&fit=crop&w=800&q=80',
+        image: GENERIC_RECIPE_PLACEHOLDER,
         images: [
-          'https://images.unsplash.com/photo-1553621042-f6e147245754?auto=format&fit=crop&w=800&q=80',
-          'https://images.unsplash.com/photo-1626700051175-6818013e1d4f?auto=format&fit=crop&w=800&q=80'
+          GENERIC_RECIPE_PLACEHOLDER,
+          GENERIC_RECIPE_PLACEHOLDER
         ],
         ingredients: [
           '400 גרם פילה לוקוס טרי, נקי מעור ועצמות',
@@ -70,9 +72,9 @@ export const cookingMethods: CookingMethod[] = [
         cookTime: 0,
         difficulty: 'מתקדם',
         fishType: 'אינטיאס',
-        image: 'https://images.unsplash.com/photo-1579871494447-9811cf80d66c?auto=format&fit=crop&w=800&q=80',
+        image: GENERIC_RECIPE_PLACEHOLDER,
         images: [
-          'https://images.unsplash.com/photo-1579871494447-9811cf80d66c?auto=format&fit=crop&w=800&q=80'
+          GENERIC_RECIPE_PLACEHOLDER
         ],
         ingredients: [
           '300 גרם פילה אינטיאס (החלק העליון)',
@@ -100,10 +102,10 @@ export const cookingMethods: CookingMethod[] = [
         cookTime: 10,
         difficulty: 'בינוני',
         fishType: 'קוד / דניס',
-        image: 'https://images.unsplash.com/photo-1599084993091-1cb5c0721cc6?auto=format&fit=crop&w=800&q=80',
+        image: GENERIC_RECIPE_PLACEHOLDER,
         images: [
-          'https://images.unsplash.com/photo-1599084993091-1cb5c0721cc6?auto=format&fit=crop&w=800&q=80',
-          'https://images.unsplash.com/photo-1619250907627-379c1253082a?auto=format&fit=crop&w=800&q=80'
+          GENERIC_RECIPE_PLACEHOLDER,
+          GENERIC_RECIPE_PLACEHOLDER
         ],
         ingredients: [
           '500 גרם פילה דג לבן יציב',
@@ -129,9 +131,9 @@ export const cookingMethods: CookingMethod[] = [
         cookTime: 15,
         difficulty: 'קל',
         fishType: 'ברבוניה',
-        image: 'https://images.unsplash.com/photo-1599240332713-b30c34f9f396?auto=format&fit=crop&w=800&q=80',
+        image: GENERIC_RECIPE_PLACEHOLDER,
         images: [
-           'https://images.unsplash.com/photo-1599240332713-b30c34f9f396?auto=format&fit=crop&w=800&q=80'
+           GENERIC_RECIPE_PLACEHOLDER
         ],
         ingredients: [
           '1 ק"ג ברבוניות נקיות',
@@ -149,9 +151,9 @@ export const cookingMethods: CookingMethod[] = [
         cookTime: 8,
         difficulty: 'קל',
         fishType: 'מוסר',
-        image: 'https://images.unsplash.com/photo-1594041680534-e8c8cdebd659?auto=format&fit=crop&w=800&q=80',
+        image: GENERIC_RECIPE_PLACEHOLDER,
         images: [
-          'https://images.unsplash.com/photo-1594041680534-e8c8cdebd659?auto=format&fit=crop&w=800&q=80'
+          GENERIC_RECIPE_PLACEHOLDER
         ]
       }
     ]
@@ -171,10 +173,10 @@ export const cookingMethods: CookingMethod[] = [
         cookTime: 40,
         difficulty: 'קל',
         fishType: 'דניס',
-        image: 'https://images.unsplash.com/photo-1615141982880-131f3f4af88e?auto=format&fit=crop&w=800&q=80',
+        image: GENERIC_RECIPE_PLACEHOLDER,
         images: [
-          'https://images.unsplash.com/photo-1615141982880-131f3f4af88e?auto=format&fit=crop&w=800&q=80',
-          'https://images.unsplash.com/photo-1519708227418-c8fd9a3a277d?auto=format&fit=crop&w=800&q=80'
+          GENERIC_RECIPE_PLACEHOLDER,
+          GENERIC_RECIPE_PLACEHOLDER
         ],
         ingredients: [
           '2 דגי דניס שלמים נקיים',
@@ -202,9 +204,9 @@ export const cookingMethods: CookingMethod[] = [
         cookTime: 30,
         difficulty: 'בינוני',
         fishType: 'לוקוס',
-        image: 'https://images.unsplash.com/photo-1512058564366-18510be2db19?auto=format&fit=crop&w=800&q=80',
+        image: GENERIC_RECIPE_PLACEHOLDER,
         images: [
-          'https://images.unsplash.com/photo-1512058564366-18510be2db19?auto=format&fit=crop&w=800&q=80'
+          GENERIC_RECIPE_PLACEHOLDER
         ]
       }
     ]
@@ -224,9 +226,9 @@ export const cookingMethods: CookingMethod[] = [
         cookTime: 15,
         difficulty: 'בינוני',
         fishType: 'לברק',
-        image: 'https://images.unsplash.com/photo-1519708227418-c8fd9a3a277d?auto=format&fit=crop&w=800&q=80',
+        image: GENERIC_RECIPE_PLACEHOLDER,
         images: [
-          'https://images.unsplash.com/photo-1519708227418-c8fd9a3a277d?auto=format&fit=crop&w=800&q=80'
+          GENERIC_RECIPE_PLACEHOLDER
         ],
         ingredients: [
           '2 דגי לברק שלמים (כ-500 גרם כ"א)',
@@ -251,9 +253,9 @@ export const cookingMethods: CookingMethod[] = [
         cookTime: 8,
         difficulty: 'קל',
         fishType: 'סלמון',
-        image: 'https://images.unsplash.com/photo-1532550907401-a500c9a57435?auto=format&fit=crop&w=800&q=80',
+        image: GENERIC_RECIPE_PLACEHOLDER,
         images: [
-          'https://images.unsplash.com/photo-1532550907401-a500c9a57435?auto=format&fit=crop&w=800&q=80'
+          GENERIC_RECIPE_PLACEHOLDER
         ]
       },
       {
@@ -264,9 +266,9 @@ export const cookingMethods: CookingMethod[] = [
         cookTime: 4,
         difficulty: 'מתקדם',
         fishType: 'טונה',
-        image: 'https://images.unsplash.com/photo-1501595091296-3aa970afb3ff?auto=format&fit=crop&w=800&q=80',
+        image: GENERIC_RECIPE_PLACEHOLDER,
         images: [
-          'https://images.unsplash.com/photo-1501595091296-3aa970afb3ff?auto=format&fit=crop&w=800&q=80'
+          GENERIC_RECIPE_PLACEHOLDER
         ]
       }
     ]

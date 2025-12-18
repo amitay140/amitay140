@@ -62,7 +62,7 @@ export function RecipeImageGallery({ images, recipeTitle, description, children 
     return (
       <>
         <div
-          className="relative w-full h-[40vh] min-h-[400px] rounded-3xl overflow-hidden mb-12 shadow-2xl cursor-pointer group mx-auto max-w-[1920px]"
+          className="relative w-full h-[50vh] min-h-[400px] rounded-3xl overflow-hidden mb-12 shadow-2xl cursor-pointer group mx-auto max-w-[1920px]"
           onClick={() => handleImageClick(0)}
         >
           <img
@@ -70,7 +70,7 @@ export function RecipeImageGallery({ images, recipeTitle, description, children 
             alt={recipeTitle}
             className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-slate-900/30 via-slate-900/20 to-slate-900/60" />
+          <div className="absolute inset-0 bg-gradient-to-b from-slate-900/60 via-slate-900/40 to-slate-900/80" />
           
           <HeroContent recipeTitle={recipeTitle} description={description}>
             {children}
@@ -98,7 +98,7 @@ export function RecipeImageGallery({ images, recipeTitle, description, children 
   // Multiple images
   return (
     <>
-      <div className="relative w-full h-[40vh] min-h-[400px] rounded-3xl overflow-hidden mb-12 shadow-2xl mx-auto max-w-[1920px]">
+      <div className="relative w-full h-[50vh] min-h-[400px] rounded-3xl overflow-hidden mb-12 shadow-2xl mx-auto max-w-[1920px]">
         <Carousel
           opts={{ align: "center", direction: "rtl", loop: true }}
           className="w-full h-full"
@@ -115,7 +115,7 @@ export function RecipeImageGallery({ images, recipeTitle, description, children 
                     alt={`${recipeTitle} - תמונה ${index + 1}`}
                     className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
                   />
-                   <div className="absolute inset-0 bg-gradient-to-b from-slate-900/30 via-slate-900/20 to-slate-900/60" />
+                   <div className="absolute inset-0 bg-gradient-to-b from-slate-900/60 via-slate-900/40 to-slate-900/80" />
                    
                   {/* Zoom indicator */}
                   <div className="absolute bottom-6 right-6 bg-white/20 backdrop-blur-md border border-white/20 text-white text-sm font-medium px-4 py-2 rounded-full flex items-center gap-2 opacity-0 group-hover:opacity-100 transition-opacity z-20">

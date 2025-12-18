@@ -21,9 +21,9 @@ export function IngredientsList({ ingredients }: IngredientsListProps) {
   };
 
   return (
-    <div className="bg-slate-900 text-slate-100 rounded-3xl p-8 sticky top-24 shadow-2xl ring-1 ring-white/10">
-      <h2 className="text-2xl font-bold text-white mb-8 flex items-center gap-3 border-b border-slate-700 pb-4">
-        <ScrollText className="w-6 h-6 text-amber-500" />
+    <div className="bg-white text-slate-900 rounded-3xl p-8 sticky top-24 shadow-xl border border-slate-100">
+      <h2 className="text-2xl font-bold text-slate-900 mb-8 flex items-center gap-3 border-b border-slate-100 pb-4">
+        <ScrollText className="w-6 h-6 text-blue-600" />
         <span>מרכיבים</span>
       </h2>
       <ul className="space-y-4">
@@ -32,27 +32,27 @@ export function IngredientsList({ ingredients }: IngredientsListProps) {
             key={index}
             onClick={() => toggleItem(index)}
             className={cn(
-              "flex items-start gap-4 pb-3 last:pb-0 cursor-pointer group select-none transition-all duration-200",
+              "flex items-start gap-4 pb-3 last:pb-0 cursor-pointer group select-none transition-all duration-200 border-b border-slate-50 last:border-0",
               checkedItems[index] ? "opacity-50" : "opacity-100"
             )}
           >
             {/* Custom Checkbox */}
             <div
               className={cn(
-                "w-6 h-6 mt-1 flex-shrink-0 rounded-md border-2 flex items-center justify-center transition-colors duration-200",
+                "w-6 h-6 mt-1 flex-shrink-0 rounded-full border-2 flex items-center justify-center transition-all duration-200",
                 checkedItems[index]
-                  ? "bg-amber-500 border-amber-500"
-                  : "border-slate-600 group-hover:border-amber-500/50"
+                  ? "bg-blue-600 border-blue-600"
+                  : "border-slate-300 bg-slate-50 group-hover:border-blue-400"
               )}
             >
-              {checkedItems[index] && <Check className="w-4 h-4 text-slate-900" strokeWidth={3} />}
+              {checkedItems[index] && <Check className="w-3.5 h-3.5 text-white" strokeWidth={3} />}
             </div>
 
             {/* Text */}
             <span
               className={cn(
                 "font-medium text-lg leading-relaxed transition-all duration-200",
-                checkedItems[index] ? "line-through text-slate-500" : "text-slate-200"
+                checkedItems[index] ? "line-through text-slate-400" : "text-slate-700 group-hover:text-slate-900"
               )}
             >
               {ingredient}

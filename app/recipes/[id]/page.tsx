@@ -1,7 +1,6 @@
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { getRecipeById, getAllRecipeIds, getMethodBySlug } from '@/lib/data/methods';
-import { Breadcrumbs } from '@/components/shared/Breadcrumbs';
 import { RecipeCard } from '@/components/shared/RecipeCard';
 import { RecipeImageGallery } from '@/components/shared/RecipeImageGallery';
 import { IngredientsList } from '@/components/shared/IngredientsList';
@@ -34,15 +33,6 @@ export default async function RecipeDetailPage({
 
   return (
     <PageLayout>
-        {/* Breadcrumbs */}
-        <Breadcrumbs
-          items={[
-            { label: 'שיטות הכנה', href: '/methods' },
-            { label: recipe.methodName, href: `/methods/${recipe.methodSlug}` },
-            { label: recipe.title }
-          ]}
-        />
-
         {/* Hero Image Gallery with integrated Title, Description and Method Badge */}
         <RecipeImageGallery
           images={recipe.images || (recipe.image ? [recipe.image] : [])}
@@ -60,7 +50,7 @@ export default async function RecipeDetailPage({
         </RecipeImageGallery>
 
         {/* Meta Info Bar (New Position) */}
-        <div className="mb-16 container mx-auto px-4">
+        <div className="mb-16">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4 py-8 border-b border-slate-200">
               {recipe.fishType && (
                 <div className="flex flex-col items-center text-center group">
@@ -117,14 +107,14 @@ export default async function RecipeDetailPage({
                   </h2>
                   <div className="space-y-12">
                     {recipe.instructions.map((instruction, index) => (
-                      <div key={index} className="flex gap-8 group">
+                      <div key={index} className="flex gap-6 group">
                         <div className="flex-shrink-0">
-                            <span className="w-12 h-12 bg-white text-slate-900 border-2 border-slate-900 rounded-2xl flex items-center justify-center font-black text-xl shadow-lg group-hover:bg-slate-900 group-hover:text-white transition-colors duration-300">
+                            <span className="w-10 h-10 bg-slate-100 text-slate-600 rounded-full flex items-center justify-center font-bold text-lg group-hover:bg-blue-600 group-hover:text-white transition-colors duration-300">
                             {index + 1}
                             </span>
                         </div>
                         <div className="pt-1">
-                          <p className="text-xl text-slate-800 leading-loose font-medium">
+                          <p className="text-xl text-slate-700 leading-loose font-medium group-hover:text-slate-900 transition-colors">
                             {instruction}
                           </p>
                         </div>

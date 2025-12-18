@@ -2,7 +2,6 @@ import { notFound } from 'next/navigation';
 import { getMethodBySlug, getAllMethodSlugs } from '@/lib/data/methods';
 import { RecipesFilter } from '@/components/shared/RecipesFilter';
 import { PageLayout } from '@/components/layouts/PageLayout';
-import { Breadcrumbs } from '@/components/shared/Breadcrumbs';
 
 // Generate static params for all methods
 export function generateStaticParams() {
@@ -24,8 +23,9 @@ export default async function MethodDetailPage({
     notFound();
   }
 
-  // Use the first recipe's image as the hero background, or a fallback
-  const heroImage = method.recipes[0]?.images?.[0] || method.recipes[0]?.image || 'https://images.unsplash.com/photo-1519708227418-c8fd9a3a277d?auto=format&fit=crop&w=1920&q=80';
+  // Use the local high-quality hero image for the method page
+  // We prioritize the specific local image for the hero section
+  const heroImage = '/images/methods/chef-preparing-fish.png';
 
   return (
     <PageLayout>
