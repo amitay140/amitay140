@@ -19,10 +19,9 @@ export const cookingMethods: CookingMethod[] = [
         cookTime: 0,
         difficulty: 'קל',
         fishType: 'דניס',
-        image: GENERIC_RECIPE_PLACEHOLDER,
+        image: '/images/recipes/r1-ceviche-classic.png',
         images: [
-          GENERIC_RECIPE_PLACEHOLDER,
-          GENERIC_RECIPE_PLACEHOLDER
+          '/images/recipes/r1-ceviche-classic.png'
         ],
         ingredients: [
           '500 גרם דניס טרי, חתוך לקוביות',
@@ -50,10 +49,9 @@ export const cookingMethods: CookingMethod[] = [
         cookTime: 0,
         difficulty: 'קל',
         fishType: 'לוקוס',
-        image: GENERIC_RECIPE_PLACEHOLDER,
+        image: '/images/recipes/r2-ceviche-mediterranean.png',
         images: [
-          GENERIC_RECIPE_PLACEHOLDER,
-          GENERIC_RECIPE_PLACEHOLDER
+          '/images/recipes/r2-ceviche-mediterranean.png'
         ],
         ingredients: [
           '400 גרם פילה לוקוס טרי, נקי מעור ועצמות',
@@ -73,9 +71,9 @@ export const cookingMethods: CookingMethod[] = [
         cookTime: 0,
         difficulty: 'מתקדם',
         fishType: 'אינטיאס',
-        image: GENERIC_RECIPE_PLACEHOLDER,
+        image: '/images/recipes/r3-sashimi-amberjack.png',
         images: [
-          GENERIC_RECIPE_PLACEHOLDER
+          '/images/recipes/r3-sashimi-amberjack.png'
         ],
         ingredients: [
           '300 גרם פילה אינטיאס (החלק העליון)',
@@ -104,10 +102,9 @@ export const cookingMethods: CookingMethod[] = [
         cookTime: 10,
         difficulty: 'בינוני',
         fishType: 'קוד / דניס',
-        image: GENERIC_RECIPE_PLACEHOLDER,
+        image: '/images/recipes/r4-fish-chips.png',
         images: [
-          GENERIC_RECIPE_PLACEHOLDER,
-          GENERIC_RECIPE_PLACEHOLDER
+          '/images/recipes/r4-fish-chips.png'
         ],
         ingredients: [
           '500 גרם פילה דג לבן יציב',
@@ -133,9 +130,9 @@ export const cookingMethods: CookingMethod[] = [
         cookTime: 15,
         difficulty: 'קל',
         fishType: 'ברבוניה',
-        image: GENERIC_RECIPE_PLACEHOLDER,
+        image: '/images/recipes/r5-fried-mullet.png',
         images: [
-           GENERIC_RECIPE_PLACEHOLDER
+           '/images/recipes/r5-fried-mullet.png'
         ],
         ingredients: [
           '1 ק"ג ברבוניות נקיות',
@@ -153,9 +150,9 @@ export const cookingMethods: CookingMethod[] = [
         cookTime: 8,
         difficulty: 'קל',
         fishType: 'מוסר',
-        image: GENERIC_RECIPE_PLACEHOLDER,
+        image: '/images/recipes/r6-pan-seared-meagre.png',
         images: [
-          GENERIC_RECIPE_PLACEHOLDER
+          '/images/recipes/r6-pan-seared-meagre.png'
         ]
       }
     ]
@@ -176,10 +173,9 @@ export const cookingMethods: CookingMethod[] = [
         cookTime: 40,
         difficulty: 'קל',
         fishType: 'דניס',
-        image: GENERIC_RECIPE_PLACEHOLDER,
+        image: '/images/recipes/r7-baked-bream.png',
         images: [
-          GENERIC_RECIPE_PLACEHOLDER,
-          GENERIC_RECIPE_PLACEHOLDER
+          '/images/recipes/r7-baked-bream.png'
         ],
         ingredients: [
           '2 דגי דניס שלמים נקיים',
@@ -207,9 +203,9 @@ export const cookingMethods: CookingMethod[] = [
         cookTime: 30,
         difficulty: 'בינוני',
         fishType: 'לוקוס',
-        image: GENERIC_RECIPE_PLACEHOLDER,
+        image: '/images/recipes/r8-grouper-stew.png',
         images: [
-          GENERIC_RECIPE_PLACEHOLDER
+          '/images/recipes/r8-grouper-stew.png'
         ]
       }
     ]
@@ -230,9 +226,9 @@ export const cookingMethods: CookingMethod[] = [
         cookTime: 15,
         difficulty: 'בינוני',
         fishType: 'לברק',
-        image: GENERIC_RECIPE_PLACEHOLDER,
+        image: '/images/recipes/r9-grilled-seabass.png',
         images: [
-          GENERIC_RECIPE_PLACEHOLDER
+          '/images/recipes/r9-grilled-seabass.png'
         ],
         ingredients: [
           '2 דגי לברק שלמים (כ-500 גרם כ"א)',
@@ -257,9 +253,9 @@ export const cookingMethods: CookingMethod[] = [
         cookTime: 8,
         difficulty: 'קל',
         fishType: 'סלמון',
-        image: GENERIC_RECIPE_PLACEHOLDER,
+        image: '/images/recipes/r10-salmon-skewers.png',
         images: [
-          GENERIC_RECIPE_PLACEHOLDER
+          '/images/recipes/r10-salmon-skewers.png'
         ]
       },
       {
@@ -270,9 +266,9 @@ export const cookingMethods: CookingMethod[] = [
         cookTime: 4,
         difficulty: 'מתקדם',
         fishType: 'טונה',
-        image: GENERIC_RECIPE_PLACEHOLDER,
+        image: '/images/recipes/r11-seared-tuna.png',
         images: [
-          GENERIC_RECIPE_PLACEHOLDER
+          '/images/recipes/r11-seared-tuna.png'
         ]
       }
     ]
