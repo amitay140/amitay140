@@ -8,28 +8,28 @@ const mockVideos = [
   {
     id: '1',
     title: 'ניקוי דג לברק (שלב אחר שלב)',
-    thumbnail: 'https://res.cloudinary.com/demo/video/upload/v1605389656/clean-fish.jpg', // Placeholder
+    thumbnail: '/images/videos/clean-labrak.png', // Placeholder
     duration: '12:34',
     category: 'ניקוי דגים',
   },
   {
     id: '2',
     title: 'פילוט דניס למתחילים',
-    thumbnail: 'https://res.cloudinary.com/demo/video/upload/v1605389656/fillet-fish.jpg', // Placeholder
+    thumbnail: '/images/videos/fillet-denis.png', // Placeholder
     duration: '08:15',
     category: 'פילה',
   },
   {
     id: '3',
     title: 'בישול דגים על הגריל: סודות השף',
-    thumbnail: 'https://res.cloudinary.com/demo/video/upload/v1605389656/grill-fish.jpg', // Placeholder
+    thumbnail: '/images/videos/grill-secrets.png', // Placeholder
     duration: '15:00',
     category: 'גריל',
   },
   {
     id: '4',
     title: 'מתכון לסביצ\'ה מהיר וקל',
-    thumbnail: 'https://res.cloudinary.com/demo/video/upload/v1605389656/ceviche.jpg', // Placeholder
+    thumbnail: '/images/videos/ceviche-bowl.png', // Placeholder
     duration: '06:40',
     category: 'בישול ביתי',
   },

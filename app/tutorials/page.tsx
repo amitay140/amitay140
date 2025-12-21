@@ -10,28 +10,28 @@ const mockTutorials = [
     title: 'בטיחות וגהות בצלילה',
     description: 'מדריך יסודי לבטיחות במהלך צלילה וטיפול בדגים.',
     slug: 'safety-hygiene',
-    image: 'https://images.unsplash.com/photo-1544551763-46a8723ba3f9?auto=format&fit=crop&w=800&q=80',
+    image: '/images/tutorials/safety-hygiene.png',
   },
   {
     id: '2',
     title: 'סכינים וכישורי פילוט בסיסיים',
     description: 'הכרת סוגי סכינים וטכניקות פילוט לדגים שונים.',
     slug: 'knife-skills-filleting',
-    image: 'https://images.unsplash.com/photo-1590701833281-f61e928b36b1?auto=format&fit=crop&w=800&q=80',
+    image: '/images/tutorials/knife-skills.png',
   },
   {
     id: '3',
     title: 'איך לאחסן דגים בצורה נכונה',
     description: 'שיטות מומלצות לשמירה על טריות הדג לאחר הדיג.',
     slug: 'fish-storage',
-    image: 'https://images.unsplash.com/photo-1615141982880-131f3f4af88e?auto=format&fit=crop&w=800&q=80',
+    image: '/images/tutorials/fish-storage.png',
   },
   {
     id: '4',
     title: 'מהים לצלחת: תהליך הכנת הארוחה',
     description: 'הסבר מפורט על כל השלבים מהדיג ועד לבישול הדג.',
     slug: 'sea-to-plate',
-    image: 'https://images.unsplash.com/photo-1559339352-11d035aa65de?auto=format&fit=crop&w=800&q=80',
+    image: '/images/tutorials/sea-to-plate.png',
   },
 ];
 
